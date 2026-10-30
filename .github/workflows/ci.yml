@@ -1,0 +1,65 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - "master"
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: [ "3.10", "3.11", "3.12", "3.13" ]
+
+    env:
+      FORCE_COLOR: 1
+      TERM: xterm-color
+      MYPY_FORCE_COLOR: 1
+      MYPY_FORCE_TERMINAL_WIDTH: 200
+      PYTEST_ADDOPTS: --color=yes
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install locales
+        run: |
+          sudo locale-gen zh_CN.GBK
+          sudo update-locale
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Pip install
+        run: make install
+
+      - name: Run ruff
+        run: make ruff
+
+      - name: Run mypy
+        run: make mypy
+
+      - name: Run black
+        run: make black
+
+      - name: Run isort
+        run: make isort
+
+      - name: Run typos
+        run: make typos
+
+      - name: Run unit tests
+        run: make test
+
+      - name: Run e2e tests
+        run: make test-e2e
+
+        # TODO: fail if docs are out of date
+      - name: Build docs
+        run: make docs
+
+permissions: { }

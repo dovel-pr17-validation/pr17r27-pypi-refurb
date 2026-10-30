@@ -1,0 +1,11 @@
+test/data/err_158.py:5:14 [FURB158]: Replace `bool() as a` with `bool(a)`
+test/data/err_158.py:6:14 [FURB158]: Replace `bytearray() as b` with `bytearray(b)`
+test/data/err_158.py:7:14 [FURB158]: Replace `bytes() as c` with `bytes(c)`
+test/data/err_158.py:8:14 [FURB158]: Replace `dict() as d` with `dict(d)`
+test/data/err_158.py:9:14 [FURB158]: Replace `float() as e` with `float(e)`
+test/data/err_158.py:10:14 [FURB158]: Replace `frozenset() as f` with `frozenset(f)`
+test/data/err_158.py:11:14 [FURB158]: Replace `int() as g` with `int(g)`
+test/data/err_158.py:12:14 [FURB158]: Replace `list() as h` with `list(h)`
+test/data/err_158.py:13:14 [FURB158]: Replace `set() as i` with `set(i)`
+test/data/err_158.py:14:14 [FURB158]: Replace `str() as j` with `str(j)`
+test/data/err_158.py:15:14 [FURB158]: Replace `tuple() as k` with `tuple(k)`

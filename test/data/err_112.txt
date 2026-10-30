@@ -1,0 +1,9 @@
+test/data/err_112.py:3:5 [FURB112]: Replace `list()` with `[]`
+test/data/err_112.py:4:5 [FURB112]: Replace `dict()` with `{}`
+test/data/err_112.py:5:5 [FURB112]: Replace `tuple()` with `()`
+test/data/err_112.py:6:5 [FURB112]: Replace `int()` with `0`
+test/data/err_112.py:7:5 [FURB112]: Replace `str()` with `""`
+test/data/err_112.py:8:5 [FURB112]: Replace `float()` with `0.0`
+test/data/err_112.py:9:5 [FURB112]: Replace `complex()` with `0j`
+test/data/err_112.py:10:5 [FURB112]: Replace `bool()` with `False`
+test/data/err_112.py:11:6 [FURB112]: Replace `bytes()` with `b""`
